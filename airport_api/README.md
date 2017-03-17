@@ -6,7 +6,11 @@ within a given radius of a location. The information in the request is:
 - radius
 
 # API
-We want to follow the restful convention. The resource being requested is an
+We want to follow the restful convention.
+
+http://jsonapi.org/format/#document-resource-objects
+
+The resource being requested is an
 *airport.* Several, airports near a given point.
 
 `url: domain/airports/nearby?lat=[lat]&long=[long]&radius=[r]`
