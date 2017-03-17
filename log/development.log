@@ -1645,3 +1645,41 @@ Processing by AirportsController#nearby as JSON
 [0m
   Rendered airports/nearby.json.jbuilder (193.4ms)
 Completed 200 OK in 10290ms (Views: 197.5ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/airports/nearby?latitude=50" for 127.0.0.1 at 2017-03-17 13:20:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AirportsController#nearby as JSON
+  Parameters: {"latitude"=>"50"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `bad_request' for #<AirportsController:0x000000056fb6c0>):
+  app/controllers/airports_controller.rb:11:in `nearby'
+
+
+  Rendered /home/michaelmentele/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.9ms)
+  Rendered /home/michaelmentele/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendered /home/michaelmentele/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (22.4ms)
+  Rendered /home/michaelmentele/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (98.9ms)
+  Rendered /home/michaelmentele/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/michaelmentele/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/michaelmentele/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/michaelmentele/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/michaelmentele/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.1ms)
+  Rendered /home/michaelmentele/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/michaelmentele/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/michaelmentele/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (95.2ms)
+
+
+Started GET "/airports/nearby?latitude=50" for 127.0.0.1 at 2017-03-17 13:20:46 -0700
+Processing by AirportsController#nearby as JSON
+  Parameters: {"latitude"=>"50"}
+  Rendered airports/error.json.jbuilder (4.8ms)
+Completed 400 Bad Request in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/airports/nearby?latitude=50" for 127.0.0.1 at 2017-03-17 13:23:37 -0700
+Processing by AirportsController#nearby as JSON
+  Parameters: {"latitude"=>"50"}
+  Rendered airports/error.json.jbuilder (1.4ms)
+Completed 400 Bad Request in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)

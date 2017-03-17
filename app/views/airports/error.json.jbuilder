@@ -1,3 +1,4 @@
 json.errors do
-  json.status :status
+  json.status 400
+  json.message "Invalid request parameters."
 end
