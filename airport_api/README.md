@@ -13,8 +13,9 @@ We want to follow the restful convention. The resource being requested is an
 
 # Example Response
 {
-  {
-    "id": "9518",
+  type: "airport"
+  id: "1"
+  attributes: {
     "name": "Bus Stop",
     "city": "Hell-Bourg",
     "country": "Reunion",
@@ -23,7 +24,7 @@ We want to follow the restful convention. The resource being requested is an
     "lat" : "-21.06402",
     "long" : "55.518453",
     "altitude" : 3000,
-    "timezone" : "Indian/Reunion"  
+    "timezone" : "Indian/Reunion"
   },
   ...
 }
