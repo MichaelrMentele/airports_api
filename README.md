@@ -36,3 +36,16 @@ The resource being requested is an
 # Future Work: Geospatial SQL Objects
 
 It'd be faster and slightly more accurate to use a geospatial object like that is supported by the PostGIS extension to Postgres. It is optimized to compute geodesics and work with geospatial data.
+
+# Install/Use
+You need a ruby runtime and postgres installed. Run the below from the console in the project directory:
+`bundle install`
+`rake db:migrate`
+`psql -d airports_development`
+`CREATE EXTENSION cube;`
+`CREATE EXTENSION earthdistance;`
+
+You can then spin up the app with:
+`rails s`
+
+Run `rake routes` for a list of routes. There is only one endpoint as documented above. Enter this endpoint with the parameters you are interested in testing in your browser and you should airports returned as JSON objects.
