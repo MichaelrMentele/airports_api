@@ -1,11 +1,20 @@
 class AirportsController < ApplicationController
   def nearby
-    latitude = params[:latitude].to_i
-    longitude = params[:longitude].to_i
-    radius = params[:radius].to_i
+    latitude = params[:latitude]
+    longitude = params[:longitude]
+    radius = params[:radius]
 
-    @airports = Airport.nearby(latitude, longitude, radius)
-    
-    render :nearby, status: :ok
+    if latitude && longitude && radius
+      @airports = Airport.nearby(latitude, longitude, radius)
+      render :nearby, status: :ok
+    else
+      render :error, status: :bad_request
+    end
+  end
+
+  private
+
+  def nearby_params
+    params.permit(:format, :latitude, :longitude, :radius)
   end
 end
